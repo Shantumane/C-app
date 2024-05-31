@@ -1,0 +1,11 @@
+/* Basic styles for the app component */
+:host {
+    display: block;
+    padding: 10px;
+    background-color: #f5f5f5;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  

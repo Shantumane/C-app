@@ -1,0 +1,107 @@
+<section class="h-100 bg-dark justify-content-center">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col justify-content-center align-items-center">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+            <div class="col-xl-6">
+              <div class="card-body p-md-5 text-black">
+                <h3 class="mb-5 text-uppercase">Registration Form</h3>
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                  <div class="row">
+                    <h6 class="mb-0">Upload your photo</h6>
+                    <div class="col-md-9 pe-5">
+                      <input class="form-control form-control-lg" id="formFileLg" type="file" (change)="onFileSelected($event)" />
+                      <div class="small text-muted mt-2">Upload your Profile photo. Max file size 50 MB</div>
+                      <img *ngIf="photoPreview" [src]="photoPreview" alt="Profile Photo Preview" class="img-thumbnail mt-3" width="150">
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="firstName" class="form-control form-control-lg" formControlName="firstName" />
+                        <label class="form-label" for="firstName">First name</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="lastName" class="form-control form-control-lg" formControlName="lastName" />
+                        <label class="form-label" for="lastName">Last name</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="fathersName" class="form-control form-control-lg" formControlName="fathersName" />
+                        <label class="form-label" for="fathersName">Father's name</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="age" class="form-control form-control-lg" formControlName="age" />
+                        <label class="form-label" for="age">Age</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="text" id="address" class="form-control form-control-lg" formControlName="address" />
+                    <label class="form-label" for="address">Address</label>
+                  </div>
+                  <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+                    <h6 class="mb-0 me-4">Gender: </h6>
+                    <div class="form-check form-check-inline mb-0 me-4">
+                      <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="Female" formControlName="gender" />
+                      <label class="form-check-label" for="femaleGender">Female</label>
+                    </div>
+                    <div class="form-check form-check-inline mb-0 me-4">
+                      <input class="form-check-input" type="radio" name="gender" id="maleGender" value="Male" formControlName="gender" />
+                      <label class="form-check-label" for="maleGender">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline mb-0">
+                      <input class="form-check-input" type="radio" name="gender" id="otherGender" value="Other" formControlName="gender" />
+                      <label class="form-check-label" for="otherGender">Other</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <select class="form-select" formControlName="state">
+                        <option value="" disabled selected>State</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Telangana">Telangana</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <select class="form-select" formControlName="city">
+                        <option value="" disabled selected>City</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Bengaluru">Bengaluru</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="text" id="dob" class="form-control form-control-lg" formControlName="dob" />
+                    <label class="form-label" for="dob">DOB</label>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="text" id="pincode" class="form-control form-control-lg" formControlName="pincode" />
+                    <label class="form-label" for="pincode">Pincode</label>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="email" id="email" class="form-control form-control-lg" formControlName="email" />
+                    <label class="form-label" for="email">Email ID</label>
+                  </div>
+                  <div class="d-flex justify-content-end pt-3">
+                    <button type="button" class="btn btn-light btn-lg">Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-lg">Submit form</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
